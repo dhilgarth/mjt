@@ -22,12 +22,7 @@ module.exports = function (config) {
 
         client:{
           // leave Jasmine Spec Runner output visible in browser
-            clearContext: false,
-          jasmine: {
-            helpers: [
-              "spec/helpers/*.js"
-            ]
-          }
+            clearContext: false
         },
 
         // list of files to exclude
@@ -37,7 +32,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            "**/*.ts": ["karma-typescript"],
+            "**/*.ts": ["karma-typescript"]
         },
 
         karmaTypescriptConfig: {

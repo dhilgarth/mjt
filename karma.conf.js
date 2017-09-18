@@ -15,13 +15,19 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "spec/helpers/helper.ts",
+          {pattern: "spec/helpers/*.js"},
             {pattern: "src/**/*.ts"},
             {pattern: "spec/**/*.ts"}
         ],
 
         client:{
-            clearContext: false // leave Jasmine Spec Runner output visible in browser
+          // leave Jasmine Spec Runner output visible in browser
+            clearContext: false,
+          jasmine: {
+            helpers: [
+              "spec/helpers/*.js"
+            ]
+          }
         },
 
         // list of files to exclude
@@ -31,9 +37,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            "spec/helpers/helper.ts": ["karma-typescript"],
-            "src/**/*.ts": ["karma-typescript"],
-            "spec/**/*.ts": ["karma-typescript"]
+            "**/*.ts": ["karma-typescript"],
         },
 
         karmaTypescriptConfig: {

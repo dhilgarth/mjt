@@ -6,6 +6,6 @@ describe("My test", () => {
     });
 
     it("should execute the helper", ()=>{
-        expect(helperExecuted).toEqual(1);
+      jasmine.shouldWork('will throw an error');
     })
 });
